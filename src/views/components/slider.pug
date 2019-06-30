@@ -1,0 +1,29 @@
+// Slide mixin
+mixin slide(titleFistString, titleSecondString, content)
+  .slider-list
+    .slider-list__slide
+      .slider-list__slide__title
+        = titleFistString
+        br
+        = titleSecondString
+      .slider-list__slide__content= content
+      .slider-list__slide__actions
+        button.button.button__lg.button__primary
+          | More
+
+section.slider
+  // Slides need a javascript logic
+  +slide('Asset Management', 'company', 'Market prospect by class Asset management ' +
+  'business with a history of over 100 years, focus on optional performance')
+
+  // Slider controls
+  .slider-controls
+    .slider-controls__list
+      span.slider-controls__list__control.slider-controls__list__control__active 01
+      span.slider-controls__list__control 02
+      span.slider-controls__list__control 03
+
+    // The Green-White Border below slider
+    .slider-controls__border
+      .slider-controls__border__fill
+      .slider-controls__border__opacity

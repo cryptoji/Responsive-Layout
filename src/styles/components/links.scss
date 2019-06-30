@@ -1,0 +1,158 @@
+@import "../variables";
+
+.simplebar-content {
+
+}
+
+.links {
+  &-scroll {
+    width: 100% !important;
+
+    &__area {
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 1px solid $color-border-secondary;
+
+      &__item {
+        width: 200px;
+        height: 130px;
+        padding: 30px;
+        display: inline-block;
+        border-right: 1px solid $color-border-secondary;
+        white-space: normal;
+        transition: background-color 0.2s ease-out;
+
+        &__type {
+          color: $color-text-secondary;
+          font-size: $font-size-sm;
+        }
+
+        &__text {
+          margin: 15px 0;
+          line-height: 1.8;
+        }
+
+        &:hover {
+          background-color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  &-cards {
+    display: block;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.2s ease-out;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &__icon {
+        flex-basis: 60px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 60px;
+
+        i {
+          font-size: 24px;
+        }
+
+        &__purpure {
+          background-color: #361558;
+        }
+
+        &__green {
+          background-color: $color-success;
+        }
+      }
+
+      &__content {
+        height: 119px;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        border-bottom: 1px solid $color-border-secondary;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// Medium devices width (320-768px)
+@media screen and (min-width: $width-md) {
+  .links {
+    flex-direction: row;
+
+    &-scroll {
+      &__area {
+        &__item {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &-cards {
+      display: flex;
+
+      &__item {
+        width: 50%;
+
+        &__text {
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+// Large devices width (320-768px)
+@media screen and (min-width: $width-lg) {
+  .links {
+  }
+}
+
+// Large devices width (320-768px)
+@media screen and (min-width: $width-xl) {
+  .links {
+    flex-direction: column;
+    width: 330px;
+    display: none;
+
+    &-scroll {
+      width: 100% !important;
+
+      &__area {
+        white-space: normal;
+
+        &__item {
+          width: auto;
+          border-bottom: 1px solid $color-border-secondary;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    &-cards {
+      flex-direction: column;
+
+      &__item {
+        width: 100%;
+      }
+    }
+  }
+}

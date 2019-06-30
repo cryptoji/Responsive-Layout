@@ -1,0 +1,147 @@
+@import "../variables";
+
+.slider {
+  &-controls {
+    margin-top: -50px;
+
+    &__list {
+      padding: 0 20px 20px 20px;
+
+      &__control {
+        margin: 0 15px;
+        color: rgba(255,255,255,0.5);
+        font-size: $font-size-md;
+        font-weight: bold;
+        cursor: pointer;
+
+        &__active {
+          color: $color-text-light;
+          font-size: 21px;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__border {
+      display: flex;
+
+      &__fill,
+      &__none {
+        height: 6px;
+      }
+
+      &__fill {
+        background-color: $color-success;
+        flex-basis: 80%;
+      }
+
+      &__opacity {
+        background-color: rgba(255,255,255,.4);
+        flex-basis: 20%;
+      }
+    }
+  }
+
+  &-list {
+    &__slide {
+      height: 460px;
+      padding: 0 20px;
+
+      &:nth-child(1) {
+        background-image:
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('./images/louie-martinez-482218-unsplash.jpg');
+        background: {
+          repeat: no-repeat;
+          position: center center;
+          size: cover;
+        }
+      }
+
+      &__title,
+      &__content,
+      &__actions {
+        font-weight: 200;
+        padding-bottom: 30px;
+      }
+
+      &__title {
+        padding-top: 60px;
+        color: $color-text-light;
+        letter-spacing: -1px;
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      &__content {
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.8;
+        color: $color-text-light;
+      }
+    }
+  }
+}
+
+// Medium devices width (320-768px)
+@media screen and (min-width: $width-md) {
+  .slider {
+    &-controls {
+      margin-top: -40px;
+
+      &__list {
+        padding: 0 30px 10px 30px;
+      }
+    }
+
+    &-list {
+      &__slide {
+        height: 500px;
+        padding: 0 30px;
+
+        &__title {
+          font-size: 44px;
+          padding-top: 110px;
+        }
+
+        &__content {
+          font-size: $font-size-md;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+// Large devices width (768-1024px)
+@media screen and (min-width: $width-lg) {
+  .slider {
+    &-controls {
+      margin-top: -65px;
+
+      &__list {
+        padding: 0 106px 35px 106px;
+      }
+    }
+
+    &-list {
+      &__slide {
+        height: 600px;
+        padding: 0 106px;
+
+        &__title {
+          font-size: 60px;
+          padding-top: 110px;
+        }
+
+        &__content {
+          font-size: $font-size-md;
+          width: 30%;
+        }
+      }
+    }
+  }
+}
